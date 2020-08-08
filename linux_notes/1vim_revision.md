@@ -1,4 +1,6 @@
-# This is the vim revision notes doc
+# Working with text files
+
+## Has notes on vim also
 
 i is for insert mode
 
