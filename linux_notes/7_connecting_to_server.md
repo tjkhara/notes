@@ -191,6 +191,18 @@ First type the command
 
 This will give you a list of the terminals
 
+	pts/0
+
+Is a sudo terminal
+
+	tty2
+
+Is the virtual terminal
+
+	pts/1
+
+Is the ssh session
+
 The graphical terminal shows as
 
 	:0
@@ -204,6 +216,14 @@ Something like
 	pts/0
 
 will be a terminal session on the graphical interface or an ssh session.
+
+### How to get out of the chvt terminal?
+
+Just do
+
+	sudo chvt 1
+
+to go back to the first terminal - this is your graphical interface.
 
 ### Aside
 
@@ -224,3 +244,86 @@ This will help you to toggle between the bifferent virtual sessions.
 In a real environment you can type exit to get out of this session.
 
 	exit
+
+
+## Using SSH to connect to a remote server securely
+
+In telnet there is no encryption. Should not use it.
+
+We use ssh now.
+
+You send a message to the server.
+
+The server responds with a key (RSA key finger print)
+
+	ssh 192.168.4.80
+
+This is a simple way to connect to a computer.
+
+You can use a username as well
+
+	ssh root@192.168.4.80
+
+A 
+
+	known_hosts
+
+file is created in the .ssh directory
+
+To run graphical applications you would need to use
+
+	ssh 192.168.0.1 -X
+
+For this you need an x server to be running.
+
+## Using SSH keys
+
+How does key based login work?
+
+Start by using
+
+	ssh-keygen
+
+The private key is your identity
+
+The public key will be copied over to the server
+
+For copying
+
+	ssh-copy-id
+
+When you initiate a login session you send an authentication package. This is encrypted with your private key.
+The server will apply the public key to your message. If it can decrypt, then it knows it is you.
+
+You must use a passphrase to protect your private key.
+
+This should be stronger than a password.
+
+**Example of using ssh-copy-id**
+
+	ssh-copy-id 192.168.0.100
+
+ssh-copy-id followed by the ip address of the remote server.
+
+You can specify a username as well
+
+	ssh-copy-id tkhara@192.168.0.100
+
+If you do not specify the username you will create it for the same user account.
+
+### scp
+
+	scp /etc/hosts 192.168.100.1:/tmp
+
+This works like the copy command the only difference is that we need to add the ip address of the remote server in front of the directory.
+
+	192.168.100.1:/tmp
+
+You can also use scp to copy a file from the server to your machine
+
+	scp 192.168.100.1:/tmp/onefile ./myhosts
+
+This will copy to the current directory.
+
+
+
