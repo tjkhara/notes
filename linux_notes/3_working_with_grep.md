@@ -1,11 +1,17 @@
 # Working with grep
 
+## First simple way of using grep
+
+	grep searchtext *
+
+This will search for the string searchtext in the current directory.
+
 ## ps aux
 
 This shows you processes
 
 You can use
-	| grep {search_tern}
+	| grep {search_term}
 with that to search for a specific term in the output
 
 ## Another useful way of using grep
