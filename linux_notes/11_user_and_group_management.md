@@ -113,8 +113,8 @@ tkhara | x | 1000 | 1000 | tkhara,,, | /home/tkhara | /bin/bash
 first value | second value | third value |
 
 
-First header | Second header
------------- | -------------
-first value | first value
-second value | second value
+First header | Second header | Third header
+------------ | ------------- | ------------
+first value | first value | first value
+second value | second value | second value
 
