@@ -106,8 +106,6 @@ is the main configuration file for user accounts.
 	(base) tkhara@pop-os:~/notes/linux_notes$ getent passwd tkhara
 	tkhara:x:1000:1000:tkhara,,,:/home/tkhara:/bin/bash
 
-name of user: access for encrypted password: user id : group id : gecos field : home directory : default shell
-
 tkhara       | access for encrypted password | user id      | group id     | gecos field  | home directory | default shell
 ------------ | -------------                 | ------------ | ------------ | ------------ | ------------   | ------------
 name of user | x                             | 1000         | 1000         | tkhara,,,    | /home/tkhara   | /bin/bash
