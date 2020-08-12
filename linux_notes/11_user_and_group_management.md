@@ -69,4 +69,46 @@ This is the command for Ubuntu.
 
 This command will set a home directory, create a group lisa and ask for a password.
 
+## Creating groups
+
+	groupadd sales
+
+	groupadd accounts
+
+Start by creating the groups first. Then assign the users.
+
+### Managing users and their properties
+
+	w
+
+Who is currently logged in.
+
+How to see open shells?
+
+	w
+
+Another option is
+
+	who
+
+This shows shorter output compared to w
+
+	getent passwd tkhara
+
+getent helps you to get information out of an administrative database
+
+The database in this case is passwd.
+
+	/etc/shadow
+
+is the main configuration file for user accounts.
+
+	(base) tkhara@pop-os:~/notes/linux_notes$ getent passwd tkhara
+	tkhara:x:1000:1000:tkhara,,,:/home/tkhara:/bin/bash
+
+name of user: access for encrypted password: user id : group id : gecos field : home directory : default shell
+
+tkhara | x | 1000 | 1000 | tkhara,,, | /home/tkhara | /bin/bash
+----   | ---- | ---- | 
+first value | second value | third value |
 
