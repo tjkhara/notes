@@ -108,8 +108,8 @@ is the main configuration file for user accounts.
 
 name of user: access for encrypted password: user id : group id : gecos field : home directory : default shell
 
-tkhara | access for encrypted password | user id | group id | gecos field | home directory | default shell
------------- | ------------- | ------------ | ------------ | ------------ | ------------ | ------------
-name of user  |x | 1000  | 1000 | tkhara,,, | /home/tkhara | /bin/bash
+tkhara       | access for encrypted password | user id      | group id     | gecos field  | home directory | default shell
+------------ | -------------                 | ------------ | ------------ | ------------ | ------------   | ------------
+name of user | x                             | 1000         | 1000         | tkhara,,,    | /home/tkhara   | /bin/bash
 
 
