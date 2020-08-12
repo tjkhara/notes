@@ -1,6 +1,6 @@
 # Permissions management
 
-             | file           | dir
+Permissions  | file           | dir
 ------------ | -------------- | -----------
 read         | open           | list
 write        | modify         | create/delete
