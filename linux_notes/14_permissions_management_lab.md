@@ -36,3 +36,11 @@ Check out the notes here:
 
 [Sticky bit](https://github.com/tjkhara/notes/blob/master/linux_notes/13_permissions_management.md#what-is-sticky-bit)
 
+	chmod +t /data/sales
+
+To make anna be able to remove even write protected files make her the owner of the sales directory
+
+	chown anna sales
+
+	chown {who is new owner?} {Which directory are you changing?}
+
