@@ -37,4 +37,10 @@ Add this script to your .bashrc
 
   
  
-  
+## Setting up credential storage on the system
+
+Along with this you can also use this command to store your username and password on your system in plain text.
+
+Need to learn a better way, but using this right now.
+
+	git config --global credential.helper 'store --file ~/.my-credentials'
