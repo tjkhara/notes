@@ -117,4 +117,24 @@ This has too much information.
 
 Will disconnect the device.
 
+---
+
+## Added notes the next day
+
+unmounting
+
+You can use the mount command to see what is mounted
+
+	mount | grep '^/dev'
+
+Another way of doing this is 
+
+	findmnt
+
+findmnt gives too much output
+
+	umount /mnt
+
+This will disconnect and unmount the device
+
 
