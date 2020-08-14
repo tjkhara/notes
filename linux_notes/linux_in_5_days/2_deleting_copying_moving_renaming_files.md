@@ -178,6 +178,10 @@ In one shot you can do this like this
 
 	tar zcf tps.tgz tpsreports
 
+#### Listing the files in a compressed archive
+
+	tar ztvf tps.tgz
+
 
 
 
