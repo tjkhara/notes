@@ -360,5 +360,24 @@ What is going to be loaded when we start a specific target?
 
 ### Examine the contents of the sshd service
 
+	systemctl cat sshd.service
+	systemctl status sshd
 
+### Ensure that the sshd service will be automatically started after a reboot
+
+You can first check the status to see if it is enabled:
+
+	systemctl status sshd
+
+If not enabled, then enable it:
+
+	systemctl enable sshd
+
+### Find out what is used as the default target
+
+	systemctl get-default
+
+### Show a list of all active unit files
+
+	systemctl list-units	
 
