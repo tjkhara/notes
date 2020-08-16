@@ -310,6 +310,36 @@ This will show current network configuration.
 
 #### Verify your current network configuration
 
+	ip a
+
+#### Check that you can ping google.com
+
+	ping google.com
+
+#### Use ss to get a list of services currently offered by your server
+
+	ss -tuna | less
+
+#### Use nmap to do the same
+
+First do
+
+	ip a
+
+to find out the ip address of the machine.
+
+Next do 
+
+	nmap 10.0.2.15
+
+You will also have to install nmap first.
+
+	yum install nmap
+
+### After doing ss you can check which service is on which port
+
+	grep 68 /etc/services
+
 
 
 
