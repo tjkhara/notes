@@ -120,4 +120,4 @@ Cancel the search.
 * environment variables
 * usernames (~)
 
-[compound use](pictures/history_1.png)
+![compound use](pictures/history_1.png)
