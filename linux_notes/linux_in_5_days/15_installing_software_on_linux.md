@@ -154,6 +154,70 @@ List all files in a package.
 
 Install a package.
 
+## Demo
 
+	sudo apt-get install inkscape
+
+Answer yes version is
+
+	sudo apt-get install -y gimp
+
+### How to see where a package has been installed?
+
+	which gimp
+
+### Removing
+
+	sudo apt-get remove gimp
+
+## Installing software from a .deb file
+
+	cd Downloads
+
+	sudo dpkg -i file
+
+Check with
+
+	which dropbox
+
+List all the installed packages with
+
+	dpkg -l
+
+You can combine it with less
+
+	dpkg -l | less
+
+### How to see which package the which command belongs to?
+
+	which which
+
+	/usr/bin/which
+
+	dpkg -S /usr/bin/which
+
+The output is
+
+	debianutils
+
+so that is the package.
+
+We can look at all the files in the debianutils package with
+
+	dpkg -L debianutils
+
+---
+
+## Summary
+
+### RPM
+
+* yum
+* rpm
+
+### DEB
+
+* apt
+* dpkg
 
 
