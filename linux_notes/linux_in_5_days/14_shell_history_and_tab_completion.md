@@ -113,6 +113,9 @@ Change the command.
 Cancel the search.
 
 
+### Important note - if you don't find the command you are looking for with the control + r you can do control + r again.
+
+
 ## Tab completion
 
 * commands
@@ -121,3 +124,32 @@ Cancel the search.
 * usernames (~)
 
 ![compound use](pictures/history_1.png)
+
+
+	echo alpha bravo charlie
+
+	echo !^ !l:2 delta !l:0
+
+Here
+
+	!^ is alpha
+
+This is how you specify an event see below:
+
+	!l:2
+
+This is searching for a command that started with l. This is the ls command and the second argument is
+
+	sorted_files.txt
+
+	!l:0
+
+This is the ls command itself.
+
+### Tab completion with username example
+
+	ls -ld ~adm
+
+Do tab and it will show you
+
+	~adm and ~adminuser/
