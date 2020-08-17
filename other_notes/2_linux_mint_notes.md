@@ -26,4 +26,19 @@ Goes between windows
 
 Will open a new terminal tab
 
+## Everyday commands to use on the system
 
+Shutting down the system and suspending it
+
+To suspend
+
+	sudo systemctl suspend
+
+
+To power off
+
+	sudo shutdown -P
+
+To reboot
+
+	sudo shutdown -r
