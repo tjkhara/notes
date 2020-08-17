@@ -16,6 +16,8 @@ Run at 02:00 every day and send output to a log file.
 
 ### Run a command every 15 minutes
 
+In this there are multiple arguments for the first field, which is minutes.
+
 	0,15,30,45 * * * * /opt/acme/bin/15-min-check
 
 ### Another way to do the same thing
@@ -27,4 +29,5 @@ Run at 02:00 every day and send output to a log file.
 	0-4 * * * * /opt/acme/bin/first-five-mins
 
 
+![crontab](pictures/crontab_shortcuts.png)
 
