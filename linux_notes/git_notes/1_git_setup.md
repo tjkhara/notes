@@ -44,3 +44,35 @@ Along with this you can also use this command to store your username and passwor
 Need to learn a better way, but using this right now.
 
 	git config --global credential.helper 'store --file ~/.my-credentials'
+
+## Adding an alias to make committing easier
+From: https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command
+
+I'm too lazy to type 'add-commit' and '-m' every time. Consequently, I type: git config --global alias.ac '!git add -A && git commit -m' once and every time I just type: git ac 'comment' :)
+
+You can see this alias added in
+
+	~/.gitconfig
+
+Current .gitconfig settings are:
+
+	[user]
+        	name = Tajeshwar Khara
+        	email = tkhara@gmail.com
+	[core]
+        	editor = vim
+	[color]
+        	ui = true
+	[credential]
+        	helper = store --file ~/.my-credentials
+	[alias]
+        	ac = !git add -A && git commit -m
+
+So now to quickly add and commit you can do
+
+	git ac "comment"
+
+Then after that you can push it
+
+	git push
+
