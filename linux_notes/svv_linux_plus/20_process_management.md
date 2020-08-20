@@ -70,4 +70,68 @@ If you don't like the job do control + c to terminate it.
 
 Press f to see fields.
 
+## Changing top display properties
+
+	top -u user
+
+Top for a specific user.
+
+	f
+
+See all the fields.
+
+Fields with asterisk are currently being displayed.
+
+	Go to the filed and press spacebar
+
+	When happy press q to get back to main screen
+
+top by default sorts on CPU usage
+
+	>
+
+Process will sort on the next column
+
+	<
+
+Will go to the left
+
+	VIRT
+
+is virtual memory. The total amount of memory a process may be using.
+
+	z
+
+gives you colors.
+
+	W
+
+Will write the current settings to .toprc which is in the home directory.
+
+## Monitoring process properties with ps
+
+	ps aux
+
+	ps aux | less
+
+top is good, but this is the command line alternative.
+
+Processes between
+
+	[kernel_processes]
+
+are kernel processes.
+
+If there is a 
+
+	? under TTY
+
+the process is not running in the terminal.
+
+	ps aux | grep ssh
+
+This will give you ssh process
+
+	sshd
+
 
