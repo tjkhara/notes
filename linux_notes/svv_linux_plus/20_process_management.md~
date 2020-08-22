@@ -2,8 +2,6 @@
 
 ## Understanding linux processes and jobs
 
-![process heir](images/process_heirarchy.png)
-
 The first is the init process the systemd process.
 
 The PID is 1.
