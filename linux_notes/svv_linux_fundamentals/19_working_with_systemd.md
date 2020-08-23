@@ -381,3 +381,12 @@ If not enabled, then enable it:
 
 	systemctl list-units	
 
+## practical uses and examples
+
+I was trying to start the at daemon and did some online research.
+
+This started it.
+
+starting a service
+
+    service atd start

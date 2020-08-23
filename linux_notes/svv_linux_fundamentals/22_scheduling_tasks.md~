@@ -1,0 +1,282 @@
+# scheduling tasks
+
+cron is the classic solution
+
+systemd timers is the modern solution
+
+the at service allows you to schedule tasks that run once only
+
+## understanding linux task scheduling
+
+cron
+
+This is the classical solution
+
+allows you to schedule recurring tasks
+
+uses the crond daemon
+
+use
+
+    crontab -e 
+
+to edit tasks
+
+### at
+
+for tasks that need to run only once
+
+uses the atd daemon
+
+uses at to schedule the tasks
+
+You can remember this as used to run tasks "at" a specific moment
+
+### systemd timers
+
+the newer alternative to cron jobs
+
+create a .timer unit and run it using systemctl
+
+## scheduling tasks with cron
+
+    systemctl status crond
+
+on all linux distributions the cron daemon is running by default
+
+    man 5 crontab
+
+You can also a take a look at this link
+
+[scheduling notes from linux in 5 days](https://github.com/tjkhara/notes/blob/master/linux_notes/linux_in_5_days/12_scheduling_repeated_jobs_with_cron.md)
+
+the main cron configuration file is
+
+    /etc/crontab
+
+no one uses this any more
+
+This config file has a nice diagram that shows you the command arguments and syntax
+
+### one of the most preferred ways currently is by using crontab -e
+
+    crontab -e
+
+this opens up a cron job editor and you can specify what you want to do
+
+    minute hour day month week
+
+    0 * * * * logger hello
+
+this command is saying that on minute 0 of every hour of every day in every month in every week execute logger hello
+
+basically every hour execute logger hello
+
+when you use crontab -e the job will be executed as the specific use that is using crontab -e
+
+cronjobs that generate output you cannot do anything with the output
+
+echo will fail
+
+logger is okay as it will write a message to syslog
+
+#### the cron daemon will automatically check if the configuration has changed and if it has changed it will pick it up
+
+    5 * * * * logger hello
+
+check this in
+
+    tail /var/log/messages
+
+this one says whenever there is a 5 in the minute execute this job.
+
+    cd /etc/cron.[tab]
+
+You will see 5 directories.
+
+    cron.d
+
+is a directory where you can create snapin files.
+
+This is a nice solution to put your cron jobs in here.
+
+Then there are directories like the
+
+    cron.daily/
+
+These are just scripts with no cron job.
+
+These are handled by a helper process.
+
+    anacron
+
+and that makes sure the file is run at the time specified.
+
+
+## using systemd timers
+
+    cd /usr/lib/systemd/system
+
+    ls *timer
+
+Start with the sample file
+
+    vim fstrim.timer
+
+    ls fstrim.*
+
+    fstrim.serivce
+
+There is also this file fstrim.service
+
+fstrim.timer needs fstrim.service
+
+    systemctl status fstrim.timer
+
+This is disabled
+
+to enable it
+
+    systemctl enable --now fstrim.timer
+
+---
+
+## how to enable a service and start it at the same time
+
+    systemctl enable --now fstrim.timer
+
+this --now is a newer feature in systemd.
+
+---
+
+timer has very nice man pages
+
+    man -k systemd | grep timer
+
+    man systemd.timer
+
+## using at to schedule tasks
+
+    systemctl status atd
+
+running
+
+    at 12:12
+
+    type multiple commands
+
+    poweroff
+    logger hello
+    etc
+
+    control + d
+
+in one minute the system will be powered off (this was the command given before control + d)
+
+    atq
+
+will show you what is waiting to be executed
+
+    atrm
+
+This will cancel shutdown.
+
+### great way to shutdown system at a specific time
+
+    at 12:12
+
+    poweroff
+
+This will shutdown at 12:12
+
+## command review
+
+    at
+
+    atq
+
+this will query and will show you a list of all commands currently scheduled
+
+    atrm
+
+helps you to remove a job
+
+    crontab -e
+
+editor that allows you to schedule cron jobs
+
+    systemctl
+
+related to systemd.timers
+
+## lab
+
+1. use the appropriate command to create a file /tmp/testfile five minutes from now
+
+had to first install at
+
+    yum install at
+
+then start the service
+
+    service atd start
+
+to see the current time
+
+    date
+
+then did
+
+    at 3:22
+
+    touch /tmp/testfil
+
+    control + d
+
+Then
+
+    atq
+
+will list outstanding jobs
+
+### solution to 1
+
+    man at
+
+this will show you the language that at understands
+
+we can do things like
+
+    at now +5min
+
+this is 5 mins from now
+
+2. use the appropriate solution to run the fstrim command on a daily basis.
+
+maybe change value to daily in fstrim.timer
+
+### solution to 2
+
+    systemctl disable --now fstrim.timer
+
+another way is
+
+    cd /etc/cron.daily
+
+    vim fstrim.cron
+
+just create a script with any name you want
+
+    #!/bin/bash
+    fstrim
+
+This will run fstrim command once a day.
+
+The better way would be to do it like it was explained in the lecture using the systemd timers.
+
+3. ensure that on a daily basis at 4pm the message "hello" is written to syslog.
+
+    crontab -e
+
+    0 4 * * * logger hello
+
