@@ -138,14 +138,4 @@ This only seems to be available on Centos 8 and a some initial configuration nee
 	// /web/
 	// /web/ and all the files name that are in this directory
 
----
 
-# Practical notes
-
-using regular expressions with grep simple
-
-to search for a word
-
-    grep "\<man\>" *
-
-This will search for the word man not man within other words.

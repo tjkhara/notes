@@ -21,9 +21,19 @@ Packages typically focus on the software they want to install, and use dependenc
 
 The dependency needs to be installed before you can install the package.
 
+You can use the yumdownloader to download the rpm file.
+
 Classic way to install rpm packages is
 
     rpm -ivh {file.rpm}
+
+To uninstall the package you can do
+
+    rpm -e {package_name}
+
+example:
+
+    rpm -e htop
 
 ## Managing libraries
 
@@ -285,4 +295,70 @@ this may be a good alternative to yum search or even yum provides. Get all packa
 
     yum install nmap
 
+---
 
+## Extra notes from practical usage
+
+how to install the epel repository?
+
+    yum search epel-release
+    yum info epel-release
+    yum install epel-release
+
+
+to use yum downloader to download rpm files first install:
+
+    yum install yum-utils
+
+to find a package like htop you need to have the epel repo installed.
+
+
+## deb package download
+
+    sudo apt-get --download-only install packagename
+
+The above command only works to get it into the repos and you can install it later.
+
+To download a deb file you have to use wget
+
+example:
+
+    wget http://archive.ubuntu.com/ubuntu/pool/universe/h/htop/htop_2.0.1-1_amd64.deb
+
+Then do
+
+    sudo dpkg -i {xyz.deb}
+
+To remove
+
+    sudo dpkg --remove {package_name}
+
+    sudo dpkg --remove htop
+
+
+## Installing a package from a tar file
+
+This did not work for me on either debian or centos
+
+    tar xvf htop-2.2.0.tar.gz
+
+    cd htop-2.2.0
+
+    ./configure
+
+
+Compile the course code into usable binaries
+
+    make
+
+Install resulting binaries on the system
+
+    sudo make install
+
+Verify the install
+
+    htop
+
+uninstall
+
+    sudo make uninstall
