@@ -27,3 +27,32 @@ Used in different situations.
 * in a shared user environment where one user or group needs full access to files and other users or groups need read-only access.
 * in a developer environment where a developer may require access to a server document root.
 
+## managing ACLs
+
+    getfacl
+
+to see current ACL settings
+
+this also works in directories that dont have ACLs set currently
+
+    setfacl
+
+to create a new ACL
+
+a regular ACL will take care of all currently existing files
+
+a default ACL will take care of all new files
+
+as a result if you are applying ACLs to directories, you need both of them.
+
+use ACLs as an infrastructural solution: they should be configured on directories before you start to work with files in these directories.
+
+examples:
+
+    setfacl -R -m g:account:rx /data/sales
+
+    setfacl -m d:g:account:rx /data/sales
+
+    setfacl -x g:account /data/sales
+
+

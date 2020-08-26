@@ -12,4 +12,201 @@ This is the drive level.
 
 ![the file system](./images/filesystem.png)
 
-<a href="https://github.com/tjkhara/notes/blob/master/linux_notes/general_notes/4_files_and_directories.md">view this here</a>
+    /bin
+
+These are user binaries or commands that can be used by the user.
+
+example: pwd or ls
+
+    /boot
+
+static boot files necessary to boot the linux system
+
+    /dev
+
+device files
+
+    /etc
+
+configuration files
+
+for example the apache configuration files will be here
+
+    /home
+
+user home directories
+
+    /lib
+
+libraries
+
+    /mnt
+
+will show temporary mounts
+
+    /opt
+
+optional packages
+
+    /proc
+
+kernel processes and files
+
+You can see the cpu info by seeing
+
+    cat /proc/cpuinfo
+
+    /root
+
+This is the root's home directory
+
+    /run
+
+application state files
+
+    /sbin
+
+system administration binaries
+
+binaries used by root for sys admin work
+
+    /srv
+
+service data
+
+    /tmp
+
+temp directory - non persistent
+
+    /usr
+
+user binaries like /bin
+
+    /var
+
+variable data files
+
+## common commands to move around
+
+    pwd
+
+    cd
+
+Use tab completion (hit tab two times)
+
+    cd -
+
+last directory
+
+    cd ..
+
+one level up
+
+    cd ../..
+
+two levels up
+
+
+---
+
+inode is the physical location where the file lives
+
+## hidden files and directories
+
+files and directories that are hidden from basic listing
+
+    ls -a
+
+in the gui
+
+    control + h
+
+this will show you hidden files
+
+these are not secret that is related to permissions
+
+the main purpose is to not clutter the view
+
+you can also make hidden directories
+
+    mkdir .hidden_subdir
+
+you can use
+
+    ls -A
+
+also as this is almost all excludes the . and the ..
+
+## home directories in linux
+
+these contain the user's files.
+
+this is a dedicated place for a user's files.
+
+    cat /etc/passwd
+
+this is where all the users are listed.
+
+this file will also show the home directory of users.
+
+    /etc/passwd
+
+is the master mapping on a linux system.
+
+upon login we are going to be in the home directory.
+
+you can touch files outside also.
+
+Look at environment variables
+
+    env
+
+    HOME is an environment variable
+
+so we can do
+
+    cd $HOME
+
+to go to the home directory as well
+
+## absolute and relative paths
+
+a path is a unique location of a file or directory
+
+    cat /home/cloud_user/file1
+
+or if you are in 
+
+    /home/cloud_user
+
+you can do
+
+    cat file1
+
+the first is an absolute path and the second is a relative path.
+
+This is also interesting
+
+    ./file1
+
+is the same as
+
+    file1
+
+### how to use ls to list files sorted by size
+
+I figured out from the man pages that there is an -S option for sort
+
+but i guess you can just do
+
+    ls -S
+
+combine that with l and h also for long and human readable
+
+    ls -Shl
+
+### ls option for access time
+
+    -u
+
+
