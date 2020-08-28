@@ -1,4 +1,5 @@
 # First script notes
+# Section 3 - User and account creation - Shell Scripting Project 1
 
 * create new accounts
 * checking for proper privileges
