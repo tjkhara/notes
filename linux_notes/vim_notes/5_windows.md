@@ -60,3 +60,8 @@ or
 ### adding a file to a buffer
 
 	:e nav.txt
+
+
+### Moving between windows
+
+    control + w and then h or j or k or l to move to a window

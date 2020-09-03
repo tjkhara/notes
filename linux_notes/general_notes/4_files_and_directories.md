@@ -209,4 +209,152 @@ combine that with l and h also for long and human readable
 
     -u
 
+---
 
+**Making a directory**
+
+    mkdir test2
+
+To copy a directory
+
+    cp -R test2 test3
+
+Copy the contents of the directory as well.
+
+**Moving a directory**
+
+    mv testdir2 /tmp/
+
+This is also used to rename a directory.
+
+**Deleting a directory**
+
+    rm dir2
+
+    rm -r dir2
+
+This is the recursive option.
+
+**Creating a new file**
+
+    touch newfile
+
+This either changes the timestamp or it creates a new empty file.
+
+    file
+
+The file command determines the file type.
+
+    cat
+
+Printing out a file.
+
+    mkdir -p parentdir/childdir/anotherdir
+
+This will create all the directories.
+
+**Some options for copy**
+
+    -i
+
+This will ask you before overwriting.
+
+    -s
+
+Create a symbolic link instead of a copying a file.
+
+    -v
+
+Verbose option.
+
+## Case sensitivity
+
+ext4 is a case sensitive file system.
+
+## Simple globbing
+
+What is globbing?
+
+Using partial matching to work with groups or sections of files.
+
+Used to match patterns using a wild card character.
+
+Create four files
+
+    touch file1 file2 file3 file4
+
+    ?
+
+Matches any single character.
+
+    file?
+
+This will return file1 file2 file3 file4
+
+    ?????
+
+Every file that is five characters long will be returned.
+
+    ????
+
+This will reurn 4 characters long.
+
+    ????1
+
+Four characters long and ending in 1.
+
+The next way is with
+
+    *
+
+This will match 0 to any number.
+
+    ls file*
+
+This will give all results like file1 file2 file3 file4
+
+    ls *
+
+is the same as ls.
+
+    ls *4
+
+This will return file4.
+
+Brackets:
+
+    []
+
+    ls ????[1-3]
+
+A file with any first four characters  but that ends in 1, 2, or 3.
+
+    ls *[:digit:]
+
+This will give us anything that ends in a digit.
+
+Use double brackets with this
+
+    ls *[[:digit:]]
+
+The choices you have here are:
+
+    [[:upper:]]
+
+[A-Z]
+
+    [[:lower:]]
+
+[a-z]
+
+    [[:digit:]]
+
+[0-9]
+
+    [[:alpha:]]
+
+[a-zA-Z]
+
+    [[:alphanum:]]
+
+[a-zA-Z0-9]

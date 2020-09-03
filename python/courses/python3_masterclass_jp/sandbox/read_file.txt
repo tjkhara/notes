@@ -1,0 +1,4 @@
+hello how are you
+this is a link
+https://www.abc.com
+i want to read this file with python
