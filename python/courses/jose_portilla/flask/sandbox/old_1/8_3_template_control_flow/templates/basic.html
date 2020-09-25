@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Hello {{some_variable}}</h1>
+	<p>List passed is {{some_list}}</p>
+	<p>Dict passed is {{some_dict["name"]}}</p>
+
+	<h2>Displaying the list here</h2>
+	<ul>
+		{% for item in some_list %}
+		
+		<li>{{item}}</li>
+		
+		{% endfor %}
+	</ul>
+
+	<h3>
+		{% if 1 in some_list %}
+			Yes 1 is in this list
+		{% endif %}
+	</h3>
+
+	<h3>
+		{% if 6 not in some_list %}
+			No 6 is not in this list
+		{% endif %}
+	</h3>
+</body>
+</html>

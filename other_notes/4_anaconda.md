@@ -1,3 +1,19 @@
+# Frequently used
+
+    conda env list
+
+    conda activate myflaskenv
+
+Install pip in conda
+
+    conda install --name myenv pip
+
+    conda install --name {envname} {packageconda install --name myenv scipy}
+
+
+---
+
+
 Use this command to activate anaconda first
 
 To turn off the base environment

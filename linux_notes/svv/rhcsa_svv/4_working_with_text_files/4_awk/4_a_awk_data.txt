@@ -1,0 +1,7 @@
+hello 123
+why 234
+you	11
+hero 500
+himalya 1000
+himgiri 1320
+himanshu 1999
