@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Task Master</h1>
+        <p class="lead">Update your task: </p>
+    </div>
+</div>
+<div class="container">
+    
+    <form action="/update/{{task.id}}" method="POST">
+        <div class="form-group row">
+            <label for="content" class="col-form-label">Task</label>
+            <div class="col-sm-10">
+                <input type="text" name="content" id="content" value="{{task.content}}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock %}

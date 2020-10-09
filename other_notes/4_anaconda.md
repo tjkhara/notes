@@ -10,6 +10,17 @@ Install pip in conda
 
     conda install --name {envname} {packageconda install --name myenv scipy}
 
+## Creating an environment
+
+    conda create --name myenv
+
+## List packages in an environment
+
+    conda list
+
+## Removing an environment
+
+    conda env remove --name project-env
 
 ---
 
