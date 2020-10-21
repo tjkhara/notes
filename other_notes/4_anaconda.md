@@ -1,5 +1,9 @@
 # Frequently used
 
+    conda deactivate
+
+    conda activate
+    
     conda env list
 
     conda activate myflaskenv

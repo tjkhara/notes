@@ -1,3 +1,12 @@
+# veracrypt installed
+
+# siri kali
+
+    https://www.2daygeek.com/sirikali-password-protect-encrypt-decrypt-folder-directory-linux/2/
+
+
+
+
 # generate a 2048-bit RSA key and store it in key.txt
 	
 	openssl genrsa -out key.txt 2048

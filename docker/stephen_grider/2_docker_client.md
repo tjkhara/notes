@@ -70,4 +70,20 @@ Getting output without the -a flag.
 
 This will show us the output.
 
+## Stopping containers
+
+    docker create busybox ping google.com
+
+    docker start 460d3c608e75
+
+    docker logs 460d3c608e75
+
+We can use either the docker stop or docker kill command.
+
+Kill command issues the sigkill signal - shut down right now.
+
+Stop will give it some time with sigterm to do some clean up.
+
+First try docker stop and if the container does not stop docker kill.
+
 
