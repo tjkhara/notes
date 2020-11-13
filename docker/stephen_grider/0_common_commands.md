@@ -9,3 +9,7 @@ Exit a container:
 
     control + D or exit
 
+Docker attach:
+
+    docker attach {cont_id}
+

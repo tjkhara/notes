@@ -1,3 +1,10 @@
+# For unzipping simple zip files
+
+	unzip somefile.zip
+
+
+
+
 # Compression
 
 Many different types of compression utilities.

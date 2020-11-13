@@ -1,5 +1,17 @@
 # Vagrant
 
+## Common commands
+
+Suspend all running machines:
+
+    vagrant global-status | awk '/running/{print $1}' | xargs -r -d '\n' -n 1 -- vagrant suspend
+
+
+
+
+
+
+
 ## guest additions and nfs problem
 
 https://superuser.com/questions/1527811/how-to-find-out-the-right-version-of-virtual-box-guest-additions-for-a-given-ver

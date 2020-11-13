@@ -77,3 +77,4 @@ The -f means we are specifying the file.
 
     docker run -it -p 3000:3000 CONTAINER_ID
 
+We need to map out the ports as a part of the run command.

@@ -11,3 +11,14 @@ Go to:
 This site will now be available at
 
     somesite.test
+
+## Sharing a site
+
+    valet share
+
+
+Stop sharing:
+
+    control + c 
+
+    

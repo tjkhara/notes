@@ -41,4 +41,19 @@ compose.json issue:
 
 https://discourse.roots.io/t/runtimeexception-no-composer-json-present-in-current-directory/19374
 
+
+----
+
+Oct 31st 
+
+Trying this:
+
+    tkhara@tkhara-lenovo:~/envs/trellis/trellis_example_1/trellis$ sudo composer self-update 1.10.6
+    [sudo] password for tkhara:          
+    Updating to version 1.10.6 (stable channel).
+    Downloading (100%)         
+    Use composer self-update --rollback to return to version 1.10.13
+    tkhara@tkhara-lenovo:~/envs/trellis/trellis_example_1/trellis$ 
+
+
     
